@@ -2,12 +2,13 @@ version: '2'
 services:
   jenkins:
     image: sadofrazer/jenkins
+    restart: always
     ports:
       - '8080:8080'
       - '50000:50000'
     privileged: true
     volumes:
-      - 'jenkins_home:/var/jenkins_home'
+      - 'jenkins_home:/var/lib/jenkins/'
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
 volumes:
