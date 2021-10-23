@@ -39,5 +39,6 @@ RUN usermod -aG docker jenkins
 RUN systemctl enable nginx.service
 #RUN systemctl enable jenkins
 #RUN sh /jenkins/start.sh
+RUN cp /etc/rc.d/init.d/jenkins /usr/sbin/jenkins
 
-CMD ["/jenkins/start.sh"]
+CMD ["/usr/sbin/jenkins"]
