@@ -21,7 +21,7 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-VOLUME [ “/sys/fs/cgroup” ]
+VOLUME /sys/fs/cgroup
 
 RUN mkdir /jenkins
 COPY . /jenkins
@@ -31,8 +31,7 @@ RUN cp /jenkins/jenkins.conf /etc/nginx/conf.d/jenkins.conf
 EXPOSE 80
 EXPOSE 8080
 
-VOLUME /var/lib/jenkins
-VOLUME /usr/local/jenkins 
+VOLUME /var/lib/jenkins 
 
 RUN systemctl enable docker
 RUN usermod -aG docker jenkins
