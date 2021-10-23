@@ -1,2 +1,2 @@
-systemctl enable docker
-usermod -aG docker jenkins
+systemctl start jenkins
+systemctl enable jenkins

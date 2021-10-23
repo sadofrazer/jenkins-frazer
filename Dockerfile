@@ -36,7 +36,7 @@ VOLUME /usr/local/jenkins
 RUN systemctl enable docker
 RUN usermod -aG docker jenkins
 RUN systemctl enable nginx.service
-RUN systemctl enable jenkins
-RUN sh /jenkins/start.sh
+#RUN systemctl enable jenkins
+#RUN sh /jenkins/start.sh
 
-CMD ["/usr/sbin/init"]
+CMD ["/jenkins/start.sh"]
