@@ -40,4 +40,4 @@ RUN systemctl enable nginx.service
 #RUN sh /jenkins/start.sh
 RUN cp /etc/rc.d/init.d/jenkins /usr/sbin/jenkins
 
-CMD ["/usr/sbin/jenkins", "{start}"]
+CMD ["/usr/sbin/jenkins", "start"]
