@@ -25,6 +25,7 @@ VOLUME [ “/sys/fs/cgroup” ]
 
 RUN mkdir /jenkins
 COPY . /jenkins
+RUN chmod a+x /jenkins/jenkins-install.sh
 RUN sh /jenkins/jenkins-install.sh
 RUN cp /jenkins/jenkins.conf /etc/nginx/conf.d/jenkins.conf
 EXPOSE 80
